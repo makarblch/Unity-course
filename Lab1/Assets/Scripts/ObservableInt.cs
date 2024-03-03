@@ -2,23 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObservableInt
+namespace Scripts
 {
-    private int _value;
-    public System.Action<int> OnValueChanged;
-
-    public int Value
+    public class ObservableInt
     {
-        get => _value;
-        set
+        private int _value;
+        public System.Action<int> OnValueChanged;
+
+        public int Value
         {
-            OnValueChanged?.Invoke(value);
+            get => _value;
+            set
+            {
+                OnValueChanged?.Invoke(value);
+                _value = value;
+            }
+        }
+
+        public ObservableInt(int value)
+        {
             _value = value;
         }
-    }
-
-    public ObservableInt(int value)
-    {
-        _value = value;
     }
 }
