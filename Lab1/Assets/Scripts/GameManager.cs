@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+namespace Scripts
 {
-    private ResourceBank _bank;
-
-    void Start()
+    public class GameManager : MonoBehaviour
     {
-        // Start value of game resources
-        _bank.ChangeResource(GameResource.Humans, 10);
-        _bank.ChangeResource(GameResource.Food, 5);
-        _bank.ChangeResource(GameResource.Wood, 5);
+        private ResourceBank _bank;
+
+        void Start()
+        {
+            // Start value of game resources
+            _bank.ChangeResource(GameResource.Humans, 10);
+            _bank.ChangeResource(GameResource.Food, 5);
+            _bank.ChangeResource(GameResource.Wood, 5);
+        }
     }
+
 }
